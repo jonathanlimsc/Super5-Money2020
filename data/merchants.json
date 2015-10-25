@@ -234,7 +234,7 @@
     "id": "2",
     "name": "btc-e",
     "url": "https://btc-e.com",
-    "logo": "https://btc-e.com/images/1px.png",
+    "logo": "http://easybitinvesting.com/wp-content/uploads/2013/10/BTCe-logo.png",
     "fee": "0.005",
     "buy": {
       "usd": {
@@ -310,6 +310,107 @@
       },
       "eur": {
         "current_rate": "260.4000"
+      }
+    }
+  },
+  {
+    "id": "6",
+    "name": "jlex",
+    "url": "https://www.jonathanlimsc.github.io/",
+    "logo": "http://logopond.com/avatar/111294/JL_LOGO-01.png",
+    "fee": "0.002",
+    "buy": {
+      "usd": {
+        "current_rate": "293.48",
+        "daily_change": {
+          "value": "2.2",
+          "percentage": "0.76"
+        },
+        "highest_today": "292.48",
+        "lowest_today": "287.74",
+        "todays_open": "288.7"
+      },
+      "hkd": {
+        "current_rate": "2277.16",
+        "daily_change": {
+          "value": "18.44",
+          "percentage": "0.82"
+        },
+        "highest_today": "2276.16",
+        "lowest_today": "2238.98",
+        "todays_open": "2241.39"
+      },
+      "nzd": {
+        "current_rate": "434.99",
+        "daily_change": {
+          "value": "3.16",
+          "percentage": "0.73"
+        },
+        "highest_today": "434.74",
+        "lowest_today": "427.67",
+        "todays_open": "428.45"
+      },
+      "eur": {
+        "current_rate": "268.52",
+        "daily_change": {
+          "value": "2.01",
+          "percentage": "0.76"
+        },
+        "highest_today": "266.52",
+        "lowest_today": "262.14",
+        "todays_open": "263.07"
+      },
+      "sgd": {
+        "current_rate": "413.53",
+        "daily_change": {
+          "value": "3.46",
+          "percentage": "0.85"
+        },
+        "highest_today": "410.53",
+        "lowest_today": "403.41",
+        "todays_open": "404.12"
+      }
+    },
+    "sell": {
+      "usd": {
+        "current_rate": "285.32",
+        "daily_change": {
+          "percentage": "0.19",
+          "value": "0.54"
+        },
+        "highest_today": "287.91",
+        "lowest_today": "283.24",
+        "todays_open": "284.2"
+      },
+      "hkd": {
+        "current_rate": "2209.76",
+        "daily_change": {
+          "percentage": "0.24",
+          "value": "5.39"
+        },
+        "highest_today": "2224.87",
+        "lowest_today": "2189.05",
+        "todays_open": "2191.4"
+      },
+      "eur": {
+        "current_rate": "256.1",
+        "daily_change": {
+          "percentage": "0.19",
+          "value": "0.49"
+        },
+        "highest_today": "260.51",
+        "lowest_today": "256.29",
+        "todays_open": "257.2"
+      },
+      "sgd": {
+        "current_rate": "394.09",
+        "daily_change": {
+          "percentage": "0.28",
+          "value": "1.09"
+        },
+        "highest_today": "397.25",
+        "lowest_today": "390.46",
+        "todays_open": "391.14"
       }
     }
   }
