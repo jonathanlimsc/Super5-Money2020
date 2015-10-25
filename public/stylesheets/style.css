@@ -40,9 +40,9 @@ a {
     width: 100px;
 }
 .form-tag{
-    position: absolute;
-    top: 7%;
-    left: 34%;
+    width: 50%;
+    margin: auto;
+    margin-top: -110px;
 }
 #form-tag-id{
   -webkit-animation-duration: 1s;
