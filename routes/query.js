@@ -12,14 +12,14 @@ router.get('/', function(req,res) {
   // not implemented yet: search by specifying receive amt
   var receive_amt = req.query.ra || "";
   console.log("test");
-  merchains.searchE2E(send_curr, send_amt, receive_curr, receive_amt);
+  var data = merchains.searchE2E(send_curr, send_amt, receive_curr, receive_amt);
   res.writeHead(200, {"Content-Type": "application/json"});
-  var json = JSON.stringify({
+  data = JSON.stringify({
     send_currency: send_curr,
     amount: send_amt,
     receive_curreny: receive_curr
   });
-  res.end(json);
+  res.end(data);
 });
 
 module.exports = router;

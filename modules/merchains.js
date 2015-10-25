@@ -11,6 +11,7 @@ module.exports = {
   searchE2E : function (send_curr, send_amt, receive_curr, receive_amt) {
     console.log("begin processing search request");
     validateSearch (send_curr, send_amt, receive_curr, receive_amt);
+
     // proceed with searching all possible website merchants
       // return json data
   }
