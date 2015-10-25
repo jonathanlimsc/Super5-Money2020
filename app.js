@@ -23,19 +23,19 @@ app.set('views', __dirname + '/views');
 // locate files in /public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// redirect query get request
-app.get('/q', query);
+// mount query route file middleware with /q path
+app.use('/q', query);
 
 app.get("/", function(req, res) {
   res.render('index')
 });
 
-
-// redirects invalid path to home page
-app.get('*', function(req, res) {
-    console.log("catch");
-    res.redirect('/');
-});
+//
+// // redirects invalid path to home page
+// app.get('*', function(req, res) {
+//     console.log("catch");
+//     res.redirect('/');
+// });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
