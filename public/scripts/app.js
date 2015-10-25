@@ -13,8 +13,8 @@ app.controller('mainController', ['$scope', 'GetResult', function($scope,GetResu
 	$scope.options = [{ name: "USD", id: 1 }, { name: "SGD", id: 2 }, { name: "RMB", id: 3 }];
 	$scope.onSubmit = function(){
     	console.log($scope.query.inputAmount);
-    	console.log($scope.query.selectedCurrency.id);
-    	console.log($scope.query.selectedOutputCurrency.id);
+    	console.log($scope.query.selectedCurrency.name);
+    	console.log($scope.query.selectedOutputCurrency.name);
     	GetResult.retrieveData($scope.query.inputAmount, $scope.query.selectedCurrency.id, $scope.query.selectedOutputCurrency.id, function(data){
     		console.log(data);
     	});
