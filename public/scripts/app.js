@@ -20,11 +20,10 @@ app.controller('mainController', ['$scope', 'GetResult', function($scope,GetResu
     };
 
 	$scope.onSubmit = function(){
-    	console.log($scope.query.inputAmount);
-    	console.log($scope.query.selectedCurrency.name);
-    	console.log($scope.query.selectedOutputCurrency.name);
+    	$scope.merchains = [];
     	GetResult.retrieveData($scope.query.inputAmount, $scope.query.selectedCurrency.name, $scope.query.selectedOutputCurrency.name, function(data){
-    		console.log(data);
+			$scope.merchains = (data.data);
+			console.log($scope.merchains);
     	});
 
     }
