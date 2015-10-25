@@ -21,6 +21,7 @@ app.controller('mainController', ['$scope', 'GetResult', function($scope,GetResu
     };
 
 	$scope.onSubmit = function(){
+		$scope.bottomInstructions = "animated fadeIn	";
 		$scope.isClicked = true;
     	$scope.merchains = [];
     	GetResult.retrieveData($scope.query.inputAmount, $scope.query.selectedCurrency.name, $scope.query.selectedOutputCurrency.name, function(data){
