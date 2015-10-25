@@ -91,4 +91,4 @@ select {
 .tftable th {font-size:12px;background-color:#56B948;border-width: 1px;padding: 8px;border: none;text-align:left; color: white; text-align: center;}
 .tftable tr {background-color: white;}
 .tftable td {font-size:12px;border: none; padding: 8px; text-align: center;}
-.tftable tr:hover {background-color:#9b9b9b;}
+.tftable tr:hover {border-bottom:3px; border-bottom-color: #000088; border-bottom-width: 4px;}
