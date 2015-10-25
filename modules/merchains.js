@@ -3,6 +3,7 @@
 var validateSearch = function (send_curr, send_amt, receive_curr, receive_amt) {
   //TODO: implement receive amt
   console.log(send_curr, send_amt, receive_curr, receive_amt);
+  console.log("test validateSearch");
   if(typeof send_curr === "string" && typeof send_amt === "number" && typeof receive_curr === "string"){
     if(send_amt>0) {
       console.log("search clean")
@@ -12,11 +13,13 @@ var validateSearch = function (send_curr, send_amt, receive_curr, receive_amt) {
     }
   }
   return false;
-}
+};
 
 var createMerchains = function(send_curr, send_amt, receive_curr){
-  var jsonData = JSON.parse('/modules/merchains.js');
-  var result = [];
+  console.log('Trying to parse json');
+  jsonData = JSON.parse('../data/merchants.json');
+  console.log('got json!');
+  var merchains = [];
   console.log('Pulled jsonData : ' + jsonData);
   // Generate merchain array
   for(var i=0; i<json.length; i++){
@@ -47,11 +50,11 @@ var createMerchains = function(send_curr, send_amt, receive_curr){
         }
       }
     }
-    merchain.convertedAmt = send_curr/parseFloat(merchain.startMerchant.rate)*(100-parseFloat(merchain.startMerchant.fee));
-    result.push(merchain);
+    merchain.convertedAmt = send_curr/parseFloat(merchain.startMerchant.rate)*(1-parseFloat(merchain.startMerchant.fee));
+    merchains.push(merchain);
   }
-  console.log(result);
-  return result;
+  console.log(merchains);
+  return merchains;
 
 };
 
@@ -60,14 +63,16 @@ module.exports = {
   // receieve query parameters from user and returns queried data
   searchE2E : function (send_curr, send_amt, receive_curr, receive_amt) {
     console.log("begin processing search request");
+    var obj = [];
+    var result;
     if (validateSearch(send_curr, send_amt, receive_curr, receive_amt) === true) {
       send_curr = send_curr.toLowerCase();
       receive_curr = receive_curr.toLowerCase();
       // proceed with searching all possible website merchants
       // return json data
-      var result = createMerchains(send_curr, send_amt, receive_curr);
+      result = createMerchains(send_curr, send_amt, receive_curr);
       console.log("Merchains created!");
+    }
       return result;
-    };
   }
 }
