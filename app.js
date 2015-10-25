@@ -9,6 +9,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
 var mongoose = require('./config/mongoose');
+var config = require("./config/config");
 
 var query = require('./routes/query');
 var user = require('./routes/user');
@@ -93,7 +94,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
-var server = app.listen(3000, function () {
+var server = app.listen(config.port, function () {
   var host = server.address().address;
   var port = server.address().port;
 
