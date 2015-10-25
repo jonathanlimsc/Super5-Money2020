@@ -37,23 +37,22 @@
   <% } %>
     <div ng-app="merchainApp">
       <div class="main-div" ng-controller="mainController">
-        <div class="logo-div"><img id="merc" ng-click="changeClass()" ng-model="left" ng-class="left" src="/assets/Merc-02.png">
-          <img id="hain" ng-click="changeClass()" ng-model="right" ng-class="right" src="/assets/Hain-03.png"></div>
+        <div class="logo-div"><img id="merc" ng-model="left" ng-class="left" src="/assets/Merc-02.png">
+          <img id="hain" ng-model="right" ng-class="right" src="/assets/Hain-03.png"></div>
+          <p ng-model="caption" ng-class="caption" class="caption">Kayak.com for bitcoin remittances.</p>
+          <div class="try-it-now-div"><img ng-model="tryitnow" ng-class="tryitnow" class="try-it-now" width="140" ng-click="changeClass()" src="/assets/Try it now.png"></div>
           <form id="form-tag-id" ng-show="showme" class="form-tag animated fadeIn" novalidate>
             <p class="text-form">I want to send
-            <span class="green-color">{</span><input placeholder="" class="input-amount" type="text" data-ng-model="query.inputAmount">}
+            <span class="green-color">{$</span><input class="input-amount" type="text" data-ng-model="query.inputAmount">}
             <span class="green-color">{</span><select data-ng-options="o.name for o in options" data-ng-model="query.selectedCurrency"></select>}
             to
             <span class="green-color">{</span><select data-ng-options="o.name for o in options" data-ng-model="query.selectedOutputCurrency"></select>}
-            <br><br><img class="send-icon" ng-click="onSubmit()" src="/assets/send icon.png"></p>
+            <br><br><img class="send-icon" ng-click="onSubmit()" width="110" src="/assets/Get rates.png"></p>
           </form>
       <table ng-show="showtable" class="tftable animated fadeIn" border="1">
       <tr><th>Merchant 1</th><th>Rate</th><th>Merchant 2</th><th>Rate</th><th>Amount</th></tr>
       <tr data-ng-repeat="merchain in merchains"><td><a href="{{merchain.startMerchant.url}}"><img width="50px" src="{{merchain.startMerchant.logo}}"></a></td><td>{{merchain.startMerchant.rate}}</td><td><a href="{{merchain.endMerchant.url}}"><img width="50px" src="{{merchain.endMerchant.logo}}"></a></td><td>{{merchain.endMerchant.rate}}</td><td>{{merchain.convertedAmt}}</td></tr>
       </table>
-        <div>
-          <img src="/assets/instructions.jpg">
-        </div>
 
       </div>
     </div>
