@@ -92,3 +92,17 @@ select {
 .tftable tr {background-color: white;}
 .tftable td {font-size:12px;border: none; padding: 8px; text-align: center;}
 .tftable tr:hover {border-bottom:3px; border-bottom-color: #000088; border-bottom-width: 4px;}
+a{
+    color:#56B14C;
+}
+.login{
+    color: #56B14C;
+    font-family: 'Lato', sans-serif;
+    font-size: 35px;
+    font-weight: 300;
+    margin-top: 0;
+    margin-left: 1000px;
+}
+.login:hover{
+    text-decoration: none;
+}
