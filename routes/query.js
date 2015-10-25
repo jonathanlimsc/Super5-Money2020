@@ -16,11 +16,14 @@ router.get('/', function(req,res) {
   var data = merchains.searchE2E(send_curr, send_amt, receive_curr, receive_amt);
   res.writeHead(200, {"Content-Type": "application/json"});
   //TODO: change format
-  data = JSON.stringify({
+  /*data = JSON.stringify({
     send_currency: send_curr,
     amount: send_amt,
     receive_curreny: receive_curr
   });
+*/
+  data = JSON.stringify(data);
+  console.log("Data: " +data);
   res.end(data);
 });
 

@@ -235,7 +235,7 @@
     "name": "btc-e",
     "url": "https://btc-e.com",
     "logo": "https://btc-e.com/images/1px.png",
-    "fee": "0.5",
+    "fee": "0.005",
     "buy": {
       "usd": {
         "current_rate": "283.989",
@@ -270,7 +270,7 @@
     "name": "btcc",
     "url": "https://www.btcc.com/",
     "logo": "http://lsvp.com/wp-content/uploads/2013/11/btc-china.png",
-    "fee": "0.3",
+    "fee": "0.003",
     "buy": {
         "cny":{
           "current_rate": "1887.66",
@@ -287,7 +287,7 @@
   {
     "id": "4",
     "name": "zyado",
-    "fee": "0.25",
+    "fee": "0.0025",
     "url": "https://www.zyado.com/",
     "logo": "https://www.zyado.com/img/logo.png",
     "buy": {
@@ -300,7 +300,7 @@
   {
     "id": "5",
     "name": "cex.io",
-    "fee": "0.3",
+    "fee": "0.003",
     "url": "https://cex.io/",
     "logo": "https://pbs.twimg.com/profile_images/468758376961163264/a949sXK2_400x400.png",
     "buy": {},
