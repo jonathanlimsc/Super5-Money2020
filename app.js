@@ -1,3 +1,5 @@
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -6,13 +8,13 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
+var mongoose = require('./config/mongoose');
 
 var query = require('./routes/query');
 var user = require('./routes/user');
 
 var app = express();
-
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+var db = mongoose();
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
