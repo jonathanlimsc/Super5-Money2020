@@ -21,16 +21,16 @@
     <img src="<%= user.portrait %>">
   </div>
   <div class="welcome">
-    Hello <%= user.displayName %>
+    Hello, <%= user.displayName %>!
   </div>
 
   <div class="wallet-address">
-    Your wallet address is <%= user.wallet[0].address %>
+    Your wallet address is: <a href="<%= user.wallet[0].link %>"><span class="green-color"><%= user.wallet[0].address %></span></a>
   </div>
   <div class="wallet-link"><a href="<%= user.wallet[0].link %>">
-      See more here
+      <p class="see-more"> See more here</p>
   </div>
-  <div class="logout-button"><a href="/user/logout">Logout</a></div>
+  <div class="logout-button"><a href="/user/logout"><p class="logout">Sign out</p></a></div>
    </div>
   <% } else { %>
   <div class="login-button"><a href="/user/auth/facebook"><p class="login">Sign up</p></a></div>
