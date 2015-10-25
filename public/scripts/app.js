@@ -10,7 +10,14 @@ app.config(['$routeProvider', function ($routeProvider, $locationProvider) {
 }])
 
 app.controller('mainController', ['$scope', 'GetResult', function($scope,GetResult){
-	$scope.options = [{ name: "USD", id: 1 }, { name: "SGD", id: 2 }, { name: "RMB", id: 3 }];
+	$scope.options = [{ name: "USD", id: 1 }, { name: "SGD", id: 2 }, { name: "RMB", id: 3 }];    
+    $scope.changeClass = function(){
+        $scope.left = "animated fadeOutLeft";
+        $scope.right = "animated fadeOutRight";
+        $scope.showme = true;
+
+    };
+
 	$scope.onSubmit = function(){
     	console.log($scope.query.inputAmount);
     	console.log($scope.query.selectedCurrency.name);
