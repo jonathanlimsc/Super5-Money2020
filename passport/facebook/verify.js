@@ -1,6 +1,9 @@
 var FacebookStrategy   = require('passport-facebook').Strategy
+var request = require('superagent-bluebird-promise');
 var User = require('../../models/user');
 var config = require('../../config/config');
+var blockchain = require('../../config/blockchain');
+var bCrypt = require('bcrypt-nodejs');
 
 module.exports = function(passport) {
 
@@ -18,30 +21,33 @@ module.exports = function(passport) {
 		// asynchronous verification, for effect...
 		//check user table for anyone with a facebook ID of profile.id
 		findOrCreateUser = function(){
-				console.log(profile);
 				User.findOne({'id': profile.id}, function(err, user) {
-					console.log("find end");
 					if (err) {
 						return done(err);
 					}
 					//No user was found... so create a new user with values from Facebook (all the profile. stuff)
 					if (!user) {
 						user = new User();
-						user.id = profile.id;
+						user.id = createHash(profile.id);
 						user.portrait = profile.photos[0].value;
 						user.displayName = profile.displayName;
-						console.log("user created");
-						user.save(function(err) {
-							if (err) {
+						request
+							.get('https://blockchain.info/api/v2/create_wallet?api_code=' + blockchain.api_code + "&password=" + profile.id)
+							.then(function(res) {
+								user.wallet = JSON.parse(res.text);
+								user.save(function(err) {
+									if (err) {
+										console.log(err);
+									} else {
+										return done(err, user);
+									}
+								})
+						}, function(err) {
 								console.log(err);
-							} else {
-								return done(err, user);
-							}
 						});
-						console.log("user saved");
 					} else {
-						//found user. Return
-						console.log("return done");
+						//found user
+						isValidId(user, profile.id)
 						return done(err, user);
 					}
 				});
@@ -50,5 +56,13 @@ module.exports = function(passport) {
 			// in the next tick of the event loop
 			process.nextTick(findOrCreateUser);
 		})
-	)
+	);
+	// Generates hash using bCrypt
+	var createHash = function(id){
+			return bCrypt.hashSync(id, bCrypt.genSaltSync(10), null);
+	}
+
+	var isValidId = function(user, id){
+			return bCrypt.compareSync(id, user.id);
+	}
 }

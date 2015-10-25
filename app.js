@@ -42,7 +42,16 @@ app.use('/q', query);
 app.use('/user', user);
 
 app.get("/", function(req, res) {
-  res.render('index')
+  if (req.user) {
+    req.session.isLoggedIn = true;
+  } else {
+    req.session.isLoggedIn = false;
+  }
+  res.render('index', {
+    isLoggedIn: req.session.isLoggedIn,
+    // user data object
+    user: (req.session.isLoggedIn) ? req.user : null
+  })
 });
 
 //
