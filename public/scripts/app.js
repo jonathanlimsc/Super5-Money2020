@@ -14,6 +14,8 @@ app.controller('mainController', ['$scope', 'GetResult', function($scope,GetResu
     $scope.changeClass = function(){
         $scope.left = "animated fadeOutLeft";
         $scope.right = "animated fadeOutRight";
+        $scope.caption = "animated fadeOut";
+        $scope.tryitnow = "animated fadeOut";
         $scope.showme = true;
 
     };
