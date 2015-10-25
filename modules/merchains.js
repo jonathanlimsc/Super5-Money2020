@@ -5,14 +5,13 @@ var validateSearch = function (send_curr, send_amt, receive_curr, receive_amt) {
   //TODO: implement receive amt
   console.log(send_curr, send_amt, receive_curr, receive_amt);
   console.log("test validateSearch");
-  if(typeof send_curr === "string" && typeof send_amt === "number" && typeof receive_curr === "string"){
-    if(send_amt>0) {
+  if(typeof send_curr === "string" && typeof send_amt === "number" && typeof receive_curr === "string") {
+    if (send_amt > 0) {
       console.log("search clean")
       return true;
-    } else{
-      return false;
     }
   }
+  console.log("Failing input validation.");
   return false;
 };
 
@@ -85,8 +84,8 @@ module.exports = {
 
   // receieve query parameters from user and returns queried data
   searchE2E : function (send_curr, send_amt, receive_curr, receive_amt) {
+    console.log(send_curr, send_amt, receive_curr, receive_amt);
     console.log("begin processing search request");
-    var obj = [];
     var result;
     if (validateSearch(send_curr, send_amt, receive_curr, receive_amt) === true) {
       send_curr = send_curr.toLowerCase();

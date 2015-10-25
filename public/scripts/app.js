@@ -10,7 +10,7 @@ app.config(['$routeProvider', function ($routeProvider, $locationProvider) {
 }])
 
 app.controller('mainController', ['$scope', 'GetResult', function($scope,GetResult){
-	$scope.options = [{ name: "USD", id: 1 }, { name: "SGD", id: 2 }, { name: "RMB", id: 3 }]; 
+	$scope.options = [{ name: "USD", id: 1 }, { name: "SGD", id: 2 }, { name: "CNY", id: 3 }, { name: "EUR", id: 4 }, { name: "RUR", id: 4 }, { name: "HKD", id: 4 }];
 
     $scope.changeClass = function(){
         $scope.left = "animated fadeOutLeft";
@@ -20,11 +20,10 @@ app.controller('mainController', ['$scope', 'GetResult', function($scope,GetResu
     };
 
 	$scope.onSubmit = function(){
-    	console.log($scope.query.inputAmount);
-    	console.log($scope.query.selectedCurrency.name);
-    	console.log($scope.query.selectedOutputCurrency.name);
+    	$scope.merchains = [];
     	GetResult.retrieveData($scope.query.inputAmount, $scope.query.selectedCurrency.name, $scope.query.selectedOutputCurrency.name, function(data){
-    		console.log(data);
+			$scope.merchains = (data.data);
+			console.log($scope.merchains);
     	});
 
     }
