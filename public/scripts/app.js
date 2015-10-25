@@ -22,7 +22,7 @@ app.controller('mainController', ['$scope', 'GetResult', function($scope,GetResu
     	console.log($scope.query.inputAmount);
     	console.log($scope.query.selectedCurrency.name);
     	console.log($scope.query.selectedOutputCurrency.name);
-    	GetResult.retrieveData($scope.query.inputAmount, $scope.query.selectedCurrency.id, $scope.query.selectedOutputCurrency.id, function(data){
+    	GetResult.retrieveData($scope.query.inputAmount, $scope.query.selectedCurrency.name, $scope.query.selectedOutputCurrency.name, function(data){
     		console.log(data);
     	});
 
