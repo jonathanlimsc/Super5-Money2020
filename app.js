@@ -4,8 +4,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
+var passport = require('passport');
 
 var query = require('./routes/query');
+var user = require('./routes/user');
 
 var app = express();
 
@@ -17,6 +20,14 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({ secret: 'merchain love blockchain' }));
+// Initialize Passport!  Also use passport.session() middleware, to support
+// persistent login sessions (recommended).
+app.use(passport.initialize());
+app.use(passport.session());
+// Initialize Passport-Facebook
+var initPassportFacebook = require('./passport/facebook/init');
+initPassportFacebook(passport);
 
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
@@ -25,6 +36,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // mount query route file middleware with /q path
 app.use('/q', query);
+
+app.use('/user', user);
 
 app.get("/", function(req, res) {
   res.render('index')
