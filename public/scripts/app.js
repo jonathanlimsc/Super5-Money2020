@@ -11,7 +11,6 @@ app.config(['$routeProvider', function ($routeProvider, $locationProvider) {
 
 app.controller('mainController', ['$scope', 'GetResult', function($scope,GetResult){
 	$scope.options = [{ name: "USD", id: 1 }, { name: "SGD", id: 2 }, { name: "CNY", id: 3 }, { name: "EUR", id: 4 }, { name: "RUR", id: 4 }, { name: "HKD", id: 4 }];
-
     $scope.changeClass = function(){
         $scope.left = "animated fadeOutLeft";
         $scope.right = "animated fadeOutRight";
