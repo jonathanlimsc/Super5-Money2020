@@ -15,33 +15,33 @@
 
   </head>
   <body>
+  <% if (isLoggedIn) { %>
+  <div class="top-user-bar">
+  <div class="portrait">
+    <img src="<%= user.portrait %>">
+  </div>
+  <div class="welcome">
+    Hello <%= user.displayName %>
+  </div>
+
+  <div class="wallet-address">
+    Your wallet address is <%= user.wallet[0].address %>
+  </div>
+  <div class="wallet-link"><a href="<%= user.wallet[0].link %>">
+      See more here
+  </div>
+  <div class="logout-button"><a href="/user/logout">Logout</a></div>
+   </div>
+  <% } else { %>
+  <div class="login-button"><a href="/user/auth/facebook"><p class="login">Sign up</p></a></div>
+  <% } %>
     <div ng-app="merchainApp">
-      <% if (isLoggedIn) { %>
-          <div class="portrait">
-            <img src="<%= user.portrait %>">
-          </div>
-          <div class="welcome">
-            Hello <%= user.displayName %>
-          </div>
-
-          <div class="wallet-address">
-              Your wallet address is <%= user.wallet[0].address %>
-          </div>
-          <div class="wallet-link"><a href="<%= user.wallet[0].link %>">
-              See more here
-          </div>
-          <div class="logout-button"><a href="/user/logout">Logout</a></div>
-      <% } else { %>
-          <div class="login-button"><a href="/user/auth/facebook">Login</a></div>
-      <% } %>
-
-      </div>
       <div class="main-div" ng-controller="mainController">
         <div class="logo-div"><img id="merc" ng-click="changeClass()" ng-model="left" ng-class="left" src="/assets/Merc-02.png">
           <img id="hain" ng-click="changeClass()" ng-model="right" ng-class="right" src="/assets/Hain-03.png"></div>
           <form id="form-tag-id" ng-show="showme" class="form-tag animated fadeIn" novalidate>
             <p class="text-form">I want to send
-            <span class="green-color">{</span><input placeholder="10000" class="input-amount" type="text" data-ng-model="query.inputAmount">}
+            <span class="green-color">{</span><input placeholder="" class="input-amount" type="text" data-ng-model="query.inputAmount">}
             <span class="green-color">{</span><select data-ng-options="o.name for o in options" data-ng-model="query.selectedCurrency"></select>}
             to
             <span class="green-color">{</span><select data-ng-options="o.name for o in options" data-ng-model="query.selectedOutputCurrency"></select>}
