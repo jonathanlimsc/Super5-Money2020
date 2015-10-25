@@ -43,7 +43,7 @@ a {
 .form-tag{
     width: 50%;
     margin: auto;
-    margin-top: -110px;
+    margin-top: -190px;
 }
 #form-tag-id{
   -webkit-animation-duration: 1s;
@@ -54,7 +54,7 @@ a {
   color: #56B14C;
 }
 .send-icon{
-  margin-left: 37%;
+  margin-left: 40%;
   cursor: pointer;
 }
 textarea:hover, 
