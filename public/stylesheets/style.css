@@ -21,12 +21,14 @@ a {
   -webkit-animation-duration: 1.5s;
   -webkit-animation-delay: 0.1s;
   -webkit-animation-iteration-count: 1;
+  margin-right: 4px;
 }
 
 #hain {
   -webkit-animation-duration: 1.5s;
   -webkit-animation-delay: 0.1s;
   -webkit-animation-iteration-count: 1;
+  margin-left: 4px;
 }
 .input-amount{
 	border-top: none;
@@ -40,7 +42,7 @@ a {
 .form-tag{
     position: absolute;
     top: 7%;
-    left: 30%;
+    left: 34%;
 }
 #form-tag-id{
   -webkit-animation-duration: 1s;
