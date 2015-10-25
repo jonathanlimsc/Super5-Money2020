@@ -26,7 +26,10 @@ var createMerchains = function(send_curr, send_amt, receive_curr){
     var merchain = {
           startMerchant: {name: '', rate: '', fee: ''},
           endMerchant: {name: '', rate: '', 'fee': ''},
-          convertedAmt: ''
+          convertedAmt: '',
+          logo: '',
+          url: ''
+
     };
     //Start merchant
     for (var key in json[i]) {
@@ -36,6 +39,8 @@ var createMerchains = function(send_curr, send_amt, receive_curr){
             merchain['startMerchant']['name'] = json[i]['name'];
             merchain['startMerchant']['rate'] = json[i]['buy'][send_curr]['current_rate'];
             merchain['startMerchant']['fee'] = json[i]['fee'];
+            merchain['startMerchant']['logo'] = json[i]['logo'];
+            merchain['startMerchant']['url'] = json[i]['url'];
             addedMerchant = true;
           }
         }
@@ -52,6 +57,8 @@ var createMerchains = function(send_curr, send_amt, receive_curr){
               merchain['endMerchant']['name'] = json[j]['name'];
               merchain['endMerchant']['rate'] = json[j]['sell'][receive_curr]['current_rate'];
               merchain['endMerchant']['fee'] = json[j]['fee'];
+              merchain['endMerchant']['logo'] = json[j]['logo'];
+              merchain['endMerchant']['url'] = json[j]['url'];
             }
           }
         }
