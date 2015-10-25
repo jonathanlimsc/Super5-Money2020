@@ -24,6 +24,7 @@ app.controller('mainController', ['$scope', 'GetResult', function($scope,GetResu
     	GetResult.retrieveData($scope.query.inputAmount, $scope.query.selectedCurrency.name, $scope.query.selectedOutputCurrency.name, function(data){
 			$scope.merchains = (data.data);
 			console.log($scope.merchains);
+			$scope.showtable = true;
     	});
 
     }
