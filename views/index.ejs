@@ -1,0 +1,35 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>MERCHAIN</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+
+  </head>
+  <body>
+    <div ng-app="merchainApp">
+      <div ng-controller="mainController">
+        <h1>The following two lines is to test if angular is working</h1>
+        <p>Name : <input type="text" ng-model="name"></p>
+        <h1>Hello {{name}}</h1>
+        <h1>Following is our own code</h1>
+
+        <form novalidate>
+          Amount of Input Currency
+          <input type="text" data-ng-model="query.inputAmount">
+          Choose input currency
+          <select data-ng-options="o.name for o in options" data-ng-model="query.selectedCurrency"></select>
+          <br><br>
+          Choose output currency
+          <select data-ng-options="o.name for o in options" data-ng-model="query.selectedOutputCurrency"></select>
+          <button ng-click="onSubmit()">Submit</button>
+        </form>
+      </div>
+    </div>
+
+</body>
+</html>
