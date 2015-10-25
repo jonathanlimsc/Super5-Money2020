@@ -413,5 +413,119 @@
         "todays_open": "391.14"
       }
     }
+  },
+  {
+    "id": "7",
+    "name": "davex",
+    "url": "",
+    "logo": "https://digitalvictory.files.wordpress.com/2015/03/dv-logo.jpg",
+    "fee": "0.0013",
+    "buy": {
+      "usd": {
+        "current_rate": "292.24",
+        "daily_change": {
+          "value": "2.2",
+          "percentage": "0.76"
+        },
+        "highest_today": "292.48",
+        "lowest_today": "287.74",
+        "todays_open": "288.7"
+      },
+      "hkd": {
+        "current_rate": "2276.15",
+        "daily_change": {
+          "value": "18.44",
+          "percentage": "0.82"
+        },
+        "highest_today": "2276.16",
+        "lowest_today": "2238.98",
+        "todays_open": "2241.39"
+      },
+      "eur": {
+        "current_rate": "269.57",
+        "daily_change": {
+          "value": "2.01",
+          "percentage": "0.76"
+        },
+        "highest_today": "266.52",
+        "lowest_today": "262.14",
+        "todays_open": "263.07"
+      },
+      "sgd": {
+        "current_rate": "416.77",
+        "daily_change": {
+          "value": "3.46",
+          "percentage": "0.85"
+        },
+        "highest_today": "410.53",
+        "lowest_today": "403.41",
+        "todays_open": "404.12"
+      }
+    },
+    "sell": {
+      "usd": {
+        "current_rate": "283.32",
+        "daily_change": {
+          "percentage": "0.19",
+          "value": "0.54"
+        },
+        "highest_today": "287.91",
+        "lowest_today": "283.24",
+        "todays_open": "284.2"
+      },
+      "hkd": {
+        "current_rate": "2206.34",
+        "daily_change": {
+          "percentage": "0.24",
+          "value": "5.39"
+        },
+        "highest_today": "2224.87",
+        "lowest_today": "2189.05",
+        "todays_open": "2191.4"
+      },
+      "eur": {
+        "current_rate": "255.19",
+        "daily_change": {
+          "percentage": "0.19",
+          "value": "0.49"
+        },
+        "highest_today": "260.51",
+        "lowest_today": "256.29",
+        "todays_open": "257.2"
+      },
+      "sgd": {
+        "current_rate": "394.01",
+        "daily_change": {
+          "percentage": "0.28",
+          "value": "1.09"
+        },
+        "highest_today": "397.25",
+        "lowest_today": "390.46",
+        "todays_open": "391.14"
+      }
+    }
+  },
+  {
+    "id": "8",
+    "name": "coinhako",
+    "fee": "0.0025",
+    "url": "https://www.coinhako.com",
+    "logo": "https://www.coinhako.com/assets/logo_white-ac1781846b24334fda730aaf9e1b01f65abd3e7d2d58bb18502ce5c96cf9455b.png",
+    "buy": {
+      "usd":{
+        "current_rate": "293.4"
+        },
+      "sgd":{
+        "current_rate": "409.08"
+      }
+    },
+    "sell": {
+      "usd":{
+        "current_rate": "292.57"
+      },
+      "sgd": {
+        "current_rate": "408.825"
+      }
+    }
   }
 ]

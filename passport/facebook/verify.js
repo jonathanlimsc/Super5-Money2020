@@ -34,7 +34,8 @@ module.exports = function(passport) {
 						request
 							.get('https://blockchain.info/api/v2/create_wallet?api_code=' + blockchain.api_code + "&password=" + profile.id)
 							.then(function(res) {
-								user.wallet = JSON.parse(res.text);
+								user.wallet = [JSON.parse(res.text)];
+								console.log(user.wallet);
 								user.save(function(err) {
 									if (err) {
 										console.log(err);

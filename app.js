@@ -44,6 +44,7 @@ app.use('/user', user);
 app.get("/", function(req, res) {
   if (req.user) {
     req.session.isLoggedIn = true;
+    console.log(user.wallet);
   } else {
     req.session.isLoggedIn = false;
   }
